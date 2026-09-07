@@ -57,6 +57,12 @@ def test_decision_support_and_approval_are_core_contracts():
     assert "Approval gates" in workflow
 
 
+def test_packaged_schemas_match_repository_schemas():
+    for source in sorted((ROOT / "schemas").glob("*.json")):
+        packaged = ROOT / "packages" / "sam-aobpg" / "schemas" / source.name
+        assert packaged.read_text(encoding="utf-8") == source.read_text(encoding="utf-8")
+
+
 def test_release_builder_creates_installable_archives(tmp_path):
     subprocess.run([sys.executable, str(ROOT / "scripts" / "build_releases.py")], cwd=ROOT, check=True)
 

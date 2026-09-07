@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-import shutil
-import tempfile
 import zipfile
 from pathlib import Path
 
@@ -42,8 +40,6 @@ def build_zip(name: str, source: Path, prefix: str, exclude: set[str] | None = N
     destination = RELEASES / name
     with zipfile.ZipFile(destination, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         add_tree(archive, source, prefix, exclude)
-        for schema in sorted((ROOT / "schemas").glob("*.json")):
-            archive.write(schema, Path(prefix) / "schemas" / schema.name)
     return destination
 
 
@@ -56,6 +52,10 @@ def build_template_zip(name: str, source: Path, prefix: str) -> Path:
 
 def main() -> None:
     RELEASES.mkdir(parents=True, exist_ok=True)
+    skill_schemas = SKILL / "schemas"
+    skill_schemas.mkdir(parents=True, exist_ok=True)
+    for schema in sorted((ROOT / "schemas").glob("*.json")):
+        (skill_schemas / schema.name).write_text(schema.read_text(encoding="utf-8"), encoding="utf-8", newline="\n")
     write_knowledge()
     build_zip(f"sam-openai-skill-v{VERSION}.zip", SKILL, "sam-aobpg")
     build_zip(f"sam-claude-skill-v{VERSION}.zip", SKILL, "sam-aobpg", {"agents"})

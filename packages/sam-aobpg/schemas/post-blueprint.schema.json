@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sam.example/schemas/post-blueprint.schema.json",
+  "title": "SAM Post Blueprint",
+  "type": "object",
+  "required": ["schema_version", "blueprint_id", "working_title", "purpose", "audience_moment", "angle", "hook_direction", "key_message", "emotional_tone", "cta", "visual_direction", "must_include", "must_avoid", "approval"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "blueprint_id": {"type": "string", "pattern": "^BP-[0-9]{3}$"},
+    "working_title": {"type": "string"},
+    "purpose": {"type": "string"},
+    "campaign_role": {"type": "string"},
+    "audience_moment": {"type": "string"},
+    "angle": {"type": "string"},
+    "hook_direction": {"type": "string"},
+    "key_message": {"type": "string"},
+    "supporting_information": {"type": "array", "items": {"type": "string"}},
+    "emotional_tone": {"type": "string"},
+    "cta": {"type": "string"},
+    "visual_direction": {"type": "string"},
+    "platform_treatment": {"type": "object", "additionalProperties": {"type": "string"}},
+    "must_include": {"type": "array", "items": {"type": "string"}},
+    "must_avoid": {"type": "array", "items": {"type": "string"}},
+    "approval": {"enum": ["draft", "approved", "revisions-requested"]}
+  },
+  "additionalProperties": false
+}

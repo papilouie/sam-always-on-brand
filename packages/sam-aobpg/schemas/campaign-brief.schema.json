@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sam.example/schemas/campaign-brief.schema.json",
+  "title": "SAM Campaign Brief",
+  "type": "object",
+  "required": ["schema_version", "campaign_id", "brand", "source", "strategy", "production", "requirements", "approval"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "campaign_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "brand": {
+      "type": "object",
+      "required": ["id", "profile_version"],
+      "properties": {
+        "id": {"type": "string"},
+        "profile_version": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": ["summary", "confirmed_facts", "interpretations", "missing", "claims_requiring_verification"],
+      "properties": {
+        "summary": {"type": "string"},
+        "confirmed_facts": {"type": "array", "items": {"type": "string"}},
+        "interpretations": {"type": "array", "items": {"type": "string"}},
+        "missing": {"type": "array", "items": {"type": "string"}},
+        "claims_requiring_verification": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "strategy": {
+      "type": "object",
+      "required": ["goal", "audience_id", "core_message", "cta"],
+      "properties": {
+        "goal": {"type": "string"},
+        "audience_id": {"type": "string"},
+        "offer_id": {"type": ["string", "null"]},
+        "core_message": {"type": "string"},
+        "supporting_evidence": {"type": "array", "items": {"type": "string"}},
+        "cta": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "production": {
+      "type": "object",
+      "required": ["platforms", "formats", "concept_count", "adaptation_strategy", "expected_deliverables"],
+      "properties": {
+        "platforms": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "formats": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "concept_count": {"type": "integer", "minimum": 1, "maximum": 5},
+        "adaptation_strategy": {"type": "string"},
+        "expected_deliverables": {"type": "integer", "minimum": 1, "maximum": 12}
+      },
+      "additionalProperties": false
+    },
+    "requirements": {
+      "type": "object",
+      "required": ["must_include", "must_avoid", "disclosures"],
+      "properties": {
+        "must_include": {"type": "array", "items": {"type": "string"}},
+        "must_avoid": {"type": "array", "items": {"type": "string"}},
+        "disclosures": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "approval": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {"status": {"enum": ["draft", "approved", "revisions-requested"]}},
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

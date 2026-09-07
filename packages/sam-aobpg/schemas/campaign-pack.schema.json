@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sam.example/schemas/campaign-pack.schema.json",
+  "title": "SAM Campaign Pack Manifest",
+  "type": "object",
+  "required": ["schema_version", "pack_type", "campaign", "brand", "files", "production", "approvals", "verification"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "pack_type": {"const": "sam-campaign-pack"},
+    "campaign": {
+      "type": "object",
+      "required": ["id", "name", "status", "created"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "name": {"type": "string"},
+        "status": {"enum": ["draft", "brief-approved", "blueprints-approved", "complete"]},
+        "created": {"type": "string", "format": "date"}
+      },
+      "additionalProperties": false
+    },
+    "brand": {
+      "type": "object",
+      "required": ["id", "profile_version"],
+      "properties": {
+        "id": {"type": "string"},
+        "profile_version": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "files": {
+      "type": "object",
+      "required": ["campaign_brief"],
+      "properties": {
+        "campaign_brief": {"type": "string"},
+        "source_summary": {"type": "string"},
+        "approved_blueprints": {"type": "string"},
+        "final_posts": {"type": "string"},
+        "visual_briefs": {"type": "string"},
+        "accessibility": {"type": "string"},
+        "verification_notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "production": {
+      "type": "object",
+      "required": ["concepts", "platforms", "final_deliverables"],
+      "properties": {
+        "concepts": {"type": "integer", "minimum": 1, "maximum": 5},
+        "platforms": {"type": "array", "items": {"type": "string"}},
+        "final_deliverables": {"type": "integer", "minimum": 1, "maximum": 12}
+      },
+      "additionalProperties": false
+    },
+    "approvals": {
+      "type": "object",
+      "required": ["campaign_brief", "blueprints", "final_content"],
+      "properties": {
+        "campaign_brief": {"type": "boolean"},
+        "blueprints": {"type": "boolean"},
+        "final_content": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "required": ["unresolved"],
+      "properties": {"unresolved": {"type": "array", "items": {"type": "string"}}},
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
