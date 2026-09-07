@@ -39,6 +39,7 @@ def test_skill_frontmatter_and_invocation_policy():
     frontmatter = yaml.safe_load(skill.split("---", 2)[1])
     assert frontmatter["name"] == "sam-aobpg"
     assert "on-brand" in frontmatter["description"]
+    assert len(frontmatter["description"]) <= 200
 
     metadata = yaml.safe_load(
         (ROOT / "packages" / "sam-aobpg" / "agents" / "openai.yaml").read_text(encoding="utf-8")

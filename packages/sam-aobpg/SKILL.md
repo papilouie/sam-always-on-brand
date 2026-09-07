@@ -1,6 +1,6 @@
 ---
 name: sam-aobpg
-description: Guide users from brand setup or an imported Brand Pack through campaign planning, distinct Post Blueprint approval, and generation or review of on-brand social posts, visual concepts, scripts, articles, and newsletters. Use for branded content creation, campaign ideation, repurposing, platform adaptation, or brand-alignment review.
+description: Create or review on-brand posts, scripts, articles, and visual concepts using guided Brand Packs and approved Post Blueprints. Use for branded content, repurposing, or platform adaptation.
 ---
 
 # SAM — Always-On Brand Post Generator
