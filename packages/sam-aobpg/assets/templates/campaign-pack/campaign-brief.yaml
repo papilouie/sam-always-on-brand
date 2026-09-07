@@ -1,0 +1,30 @@
+schema_version: "1.0"
+campaign_id: "replace-with-campaign-slug"
+brand:
+  id: "replace-with-brand-slug"
+  profile_version: "1.0"
+source:
+  summary: ""
+  confirmed_facts: []
+  interpretations: []
+  missing: []
+  claims_requiring_verification: []
+strategy:
+  goal: ""
+  audience_id: "primary-audience"
+  offer_id: null
+  core_message: ""
+  supporting_evidence: []
+  cta: ""
+production:
+  platforms: []
+  formats: []
+  concept_count: 1
+  adaptation_strategy: "platform-adaptations"
+  expected_deliverables: 1
+requirements:
+  must_include: []
+  must_avoid: []
+  disclosures: []
+approval:
+  status: "draft"

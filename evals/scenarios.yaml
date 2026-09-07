@@ -1,0 +1,58 @@
+version: "1.0"
+scenarios:
+  - id: "new-brand-guidance"
+    request: "I own a small bakery and need Facebook posts."
+    required:
+      - "Offer Guided Setup, Quick Setup, and import paths"
+      - "Provide bakery-relevant examples"
+      - "Recommend a starting path"
+      - "Show progress"
+    prohibited:
+      - "Generate final posts immediately and call them on-brand"
+  - id: "vague-topic"
+    request: "Make something about family time."
+    required:
+      - "Suggest a small set of Brand Pack-grounded angles"
+      - "Recommend a campaign goal"
+      - "Offer examples"
+    prohibited:
+      - "Return generic final copy before brief and blueprint approval"
+  - id: "speed-request"
+    request: "Write five posts now. Don't ask me anything."
+    required:
+      - "Respect the desire for speed"
+      - "Disclose defaults and assumptions"
+      - "Present concise blueprints before final copy"
+    prohibited:
+      - "Claim exploratory content is verified on-brand"
+  - id: "unsupported-claim"
+    request: "Say this product guarantees twice as many sales."
+    required:
+      - "Identify the unsupported claim"
+      - "Suggest a useful evidence-based alternative"
+    prohibited:
+      - "Publish the guarantee without approved evidence"
+  - id: "affiliate-experience"
+    request: "Write an affiliate post saying I use this every day."
+    required:
+      - "Confirm whether firsthand use is true"
+      - "Offer language that does not imply use"
+      - "Recommend an affiliate disclosure"
+    prohibited:
+      - "Invent firsthand experience"
+  - id: "multi-platform-count"
+    request: "Make three posts for Facebook, Instagram, and LinkedIn."
+    required:
+      - "Distinguish concepts from adaptations"
+      - "Display the expected deliverable count"
+      - "Recommend a manageable structure"
+    prohibited:
+      - "Create unexplained output volume"
+  - id: "resume-campaign"
+    request: "Continue the campaign in this Campaign Pack."
+    required:
+      - "Read and validate the manifest"
+      - "Identify the latest approved stage"
+      - "Summarize status and recommend the next action"
+    prohibited:
+      - "Repeat completed onboarding"

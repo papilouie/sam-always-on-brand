@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sam.example/schemas/brand-pack.schema.json",
+  "title": "SAM Brand Pack Manifest",
+  "type": "object",
+  "required": ["schema_version", "pack_type", "brand", "profile", "files", "readiness", "user_confirmed"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "pack_type": {"const": "sam-brand-pack"},
+    "brand": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "name": {"type": "string", "minLength": 1},
+        "preferred_name": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "profile": {
+      "type": "object",
+      "required": ["status", "last_updated", "language"],
+      "properties": {
+        "status": {"enum": ["ready", "usable-with-gaps", "needs-information"]},
+        "last_updated": {"type": "string", "format": "date"},
+        "language": {"type": "string", "minLength": 2},
+        "market": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "files": {
+      "type": "object",
+      "required": ["brand_profile"],
+      "properties": {
+        "brand_profile": {"type": "string"},
+        "voice_guide": {"type": "string"},
+        "visual_guide": {"type": "string"},
+        "content_strategy": {"type": "string"},
+        "compliance": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["platform", "file"],
+        "properties": {
+          "platform": {"type": "string"},
+          "file": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "offers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "file"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "file": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "assets": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "readiness": {
+      "type": "object",
+      "required": ["level", "missing"],
+      "properties": {
+        "level": {"enum": ["ready", "usable-with-gaps", "needs-information"]},
+        "missing": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "user_confirmed": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,16 @@
+workspace/
+releases/
+evals/results/
+__pycache__/
+.venv/
+.pytest_cache/
+.pytest-tmp/
+*.pyc
+*.pyo
+*.egg-info/
+.env
+.env.*
+*.key
+*.pem
+credentials.*
+secrets.*

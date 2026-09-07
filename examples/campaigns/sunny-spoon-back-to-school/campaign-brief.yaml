@@ -1,0 +1,43 @@
+schema_version: "1.0"
+campaign_id: "sunny-spoon-back-to-school"
+brand:
+  id: "sunny-spoon"
+  profile_version: "1.0"
+source:
+  summary: "Promote the ongoing Weeknight Family Box before school starts using an available product photo."
+  confirmed_facts:
+    - "Serves four"
+    - "Includes roast chicken, two large sides, four rolls, and four cookies"
+    - "Available Monday through Thursday"
+    - "Price is $32"
+    - "Order URL is https://sunnyspoon.example/familybox"
+  interpretations:
+    - "School-night routines make dinner convenience relevant"
+  missing: []
+  claims_requiring_verification:
+    - "Any savings comparison"
+strategy:
+  goal: "Relatable awareness, consideration, and orders"
+  audience_id: "busy-austin-parents"
+  offer_id: "weeknight-family-box"
+  core_message: "School nights already involve enough decisions; the Weeknight Family Box provides one straightforward dinner option."
+  supporting_evidence:
+    - "Confirmed box contents"
+    - "Confirmed serving size, price, and weekday availability"
+  cta: "Vary by campaign stage: conversation, view the offer, then order"
+production:
+  platforms: ["facebook", "instagram"]
+  formats: ["image-post"]
+  concept_count: 3
+  adaptation_strategy: "Adapt each concept meaningfully for both platforms"
+  expected_deliverables: 6
+requirements:
+  must_include:
+    - "Use only confirmed offer details"
+  must_avoid:
+    - "Unsupported savings comparisons"
+    - "False urgency"
+    - "Childish humor"
+  disclosures: []
+approval:
+  status: "approved"

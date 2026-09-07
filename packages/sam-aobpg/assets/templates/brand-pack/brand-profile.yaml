@@ -1,0 +1,36 @@
+schema_version: "1.0"
+identity:
+  name: "Replace with brand name"
+  preferred_name: ""
+  type: ""
+  website: null
+  location: null
+  languages: ["English"]
+  description: ""
+  mission: null
+  differentiators: []
+audiences:
+  primary:
+    id: "primary-audience"
+    name: ""
+    situation: ""
+    problems: []
+    desired_outcomes: []
+    objections: []
+    preferred_language: []
+  secondary: []
+voice_summary:
+  traits: ["", "", ""]
+  boundaries: [""]
+  point_of_view: "we"
+  reading_level: "general"
+  promotional_intensity: "soft-to-moderate"
+content:
+  default_language: "English"
+  emoji_usage: "light"
+  hashtag_usage: "selective"
+  default_cta_style: "friendly-and-specific"
+restrictions:
+  banned_phrases: []
+  never_invent: ["Prices", "Statistics", "Testimonials", "Deadlines", "Availability", "URLs"]
+  sensitive_topics: []

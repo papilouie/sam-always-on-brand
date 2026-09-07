@@ -1,0 +1,19 @@
+name: Validate SAM
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[test]"
+      - run: pytest
+      - run: python packages/sam-aobpg/scripts/validate_pack.py examples/brands/sunny-spoon
+      - run: python packages/sam-aobpg/scripts/validate_pack.py examples/campaigns/sunny-spoon-back-to-school
+      - run: python scripts/build_releases.py

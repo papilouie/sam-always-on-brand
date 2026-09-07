@@ -1,0 +1,7 @@
+interface:
+  display_name: "SAM — Always-On Brand"
+  short_description: "Guided, approval-first on-brand content"
+  default_prompt: "Use $sam-aobpg to turn my topic into approved, on-brand posts."
+
+policy:
+  allow_implicit_invocation: true

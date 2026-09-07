@@ -1,0 +1,66 @@
+schema_version: "1.0"
+identity:
+  name: "Sunny Spoon Family Kitchen"
+  preferred_name: "Sunny Spoon"
+  type: "local-restaurant"
+  website: "https://sunnyspoon.example"
+  location: "Austin, Texas"
+  languages: ["English"]
+  description: "Helps Austin families enjoy comforting, convenient meals without making dinner complicated."
+  mission: "Make shared family meals easier to enjoy."
+  differentiators:
+    - "Family-focused offers"
+    - "Straightforward ordering"
+    - "Welcoming local feel"
+audiences:
+  primary:
+    id: "busy-austin-parents"
+    name: "Busy Austin parents"
+    situation: "Parents balancing work, school, household responsibilities, and weekday dinner decisions."
+    problems:
+      - "Limited time to plan meals"
+      - "Different family preferences"
+      - "Concern about total meal cost"
+    desired_outcomes:
+      - "Make dinner decisions faster"
+      - "Feed four people with less coordination"
+      - "Choose familiar comfort food"
+    objections:
+      - "The bundle may not fit every preference"
+      - "Ordering for a family may feel expensive"
+    preferred_language: ["Simple", "Practical", "Encouraging"]
+  secondary:
+    - id: "local-families"
+      name: "Local families"
+      situation: "Families looking for relaxed, familiar comfort food."
+      problems: ["Finding an easy group meal"]
+      desired_outcomes: ["Enjoy a convenient shared meal"]
+      objections: []
+      preferred_language: ["Neighborly", "Clear"]
+voice_summary:
+  traits: ["Warm", "Neighborly", "Practical", "Lightly playful"]
+  boundaries:
+    - "Playful, but not childish"
+    - "Warm, but not overly sentimental"
+    - "Practical, but not dry"
+  point_of_view: "we"
+  reading_level: "general"
+  promotional_intensity: "soft-to-moderate"
+content:
+  default_language: "English"
+  emoji_usage: "light"
+  hashtag_usage: "selective"
+  default_cta_style: "friendly-and-specific"
+restrictions:
+  banned_phrases:
+    - "Guaranteed savings"
+    - "Best family meal in the world"
+  never_invent:
+    - "Prices"
+    - "Statistics"
+    - "Testimonials"
+    - "Deadlines"
+    - "Availability"
+    - "URLs"
+  sensitive_topics:
+    - "Parenting guilt"

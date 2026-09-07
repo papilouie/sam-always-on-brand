@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sam.example/schemas/brand-profile.schema.json",
+  "title": "SAM Brand Profile",
+  "type": "object",
+  "required": ["schema_version", "identity", "audiences", "voice_summary", "content", "restrictions"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "identity": {
+      "type": "object",
+      "required": ["name", "type", "description"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "preferred_name": {"type": "string"},
+        "type": {"type": "string", "minLength": 1},
+        "website": {"type": ["string", "null"]},
+        "location": {"type": ["string", "null"]},
+        "languages": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "description": {"type": "string", "minLength": 1},
+        "mission": {"type": ["string", "null"]},
+        "differentiators": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "audiences": {
+      "type": "object",
+      "required": ["primary"],
+      "properties": {
+        "primary": {"$ref": "#/$defs/audience"},
+        "secondary": {"type": "array", "items": {"$ref": "#/$defs/audience"}}
+      },
+      "additionalProperties": false
+    },
+    "voice_summary": {
+      "type": "object",
+      "required": ["traits", "boundaries", "point_of_view"],
+      "properties": {
+        "traits": {"type": "array", "minItems": 3, "maxItems": 5, "items": {"type": "string"}},
+        "boundaries": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "point_of_view": {"enum": ["i", "we", "third-person", "mixed"]},
+        "reading_level": {"type": "string"},
+        "promotional_intensity": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "content": {
+      "type": "object",
+      "required": ["default_language", "emoji_usage", "hashtag_usage", "default_cta_style"],
+      "properties": {
+        "default_language": {"type": "string"},
+        "emoji_usage": {"enum": ["none", "light", "moderate"]},
+        "hashtag_usage": {"enum": ["none", "selective", "moderate"]},
+        "default_cta_style": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "restrictions": {
+      "type": "object",
+      "required": ["banned_phrases", "never_invent"],
+      "properties": {
+        "banned_phrases": {"type": "array", "items": {"type": "string"}},
+        "never_invent": {"type": "array", "items": {"type": "string"}},
+        "sensitive_topics": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "audience": {
+      "type": "object",
+      "required": ["id", "name", "situation", "problems", "desired_outcomes"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "name": {"type": "string"},
+        "situation": {"type": "string"},
+        "problems": {"type": "array", "items": {"type": "string"}},
+        "desired_outcomes": {"type": "array", "items": {"type": "string"}},
+        "objections": {"type": "array", "items": {"type": "string"}},
+        "preferred_language": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

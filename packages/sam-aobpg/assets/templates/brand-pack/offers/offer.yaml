@@ -1,0 +1,25 @@
+schema_version: "1.0"
+offer_id: "replace-with-offer-slug"
+name: "Replace with offer name"
+type: ""
+description: ""
+audience_ids: []
+problems: []
+benefits:
+  confirmed: []
+  requires_evidence: []
+features: []
+proof: {}
+pricing:
+  status: "not-provided"
+  amount: null
+  currency: null
+availability:
+  status: "not-provided"
+  details: null
+destination:
+  url: null
+claims:
+  approved: []
+  prohibited: []
+required_disclosures: []

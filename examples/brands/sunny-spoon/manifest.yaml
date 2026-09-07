@@ -1,0 +1,32 @@
+schema_version: "1.0"
+pack_type: "sam-brand-pack"
+brand:
+  id: "sunny-spoon"
+  name: "Sunny Spoon Family Kitchen"
+  preferred_name: "Sunny Spoon"
+profile:
+  status: "usable-with-gaps"
+  last_updated: "2026-09-07"
+  language: "en"
+  market: "Austin, Texas"
+files:
+  brand_profile: "brand-profile.yaml"
+  voice_guide: "voice-guide.md"
+  visual_guide: "visual-guide.md"
+  content_strategy: "content-strategy.md"
+  compliance: "compliance.md"
+channels:
+  - platform: "facebook"
+    file: "channels/facebook.md"
+  - platform: "instagram"
+    file: "channels/instagram.md"
+offers:
+  - id: "weeknight-family-box"
+    file: "offers/weeknight-family-box.yaml"
+assets: {}
+readiness:
+  level: "usable-with-gaps"
+  missing:
+    - "Official HEX color values"
+    - "Complete logo placement rules"
+user_confirmed: true

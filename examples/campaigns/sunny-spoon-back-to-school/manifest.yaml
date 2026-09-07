@@ -1,0 +1,28 @@
+schema_version: "1.0"
+pack_type: "sam-campaign-pack"
+campaign:
+  id: "sunny-spoon-back-to-school"
+  name: "Back-to-School Weeknight Family Box"
+  status: "complete"
+  created: "2026-09-07"
+brand:
+  id: "sunny-spoon"
+  profile_version: "1.0"
+files:
+  campaign_brief: "campaign-brief.yaml"
+  source_summary: "source-summary.md"
+  approved_blueprints: "approved-blueprints.md"
+  final_posts: "final-posts.md"
+  visual_briefs: "visual-briefs.md"
+  accessibility: "accessibility.md"
+  verification_notes: "verification-notes.md"
+production:
+  concepts: 3
+  platforms: ["facebook", "instagram"]
+  final_deliverables: 6
+approvals:
+  campaign_brief: true
+  blueprints: true
+  final_content: true
+verification:
+  unresolved: []

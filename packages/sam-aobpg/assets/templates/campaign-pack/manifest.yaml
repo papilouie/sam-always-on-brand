@@ -1,0 +1,28 @@
+schema_version: "1.0"
+pack_type: "sam-campaign-pack"
+campaign:
+  id: "replace-with-campaign-slug"
+  name: "Replace with campaign name"
+  status: "draft"
+  created: "2026-09-07"
+brand:
+  id: "replace-with-brand-slug"
+  profile_version: "1.0"
+files:
+  campaign_brief: "campaign-brief.yaml"
+  source_summary: "source-summary.md"
+  approved_blueprints: "approved-blueprints.md"
+  final_posts: "final-posts.md"
+  visual_briefs: "visual-briefs.md"
+  accessibility: "accessibility.md"
+  verification_notes: "verification-notes.md"
+production:
+  concepts: 1
+  platforms: []
+  final_deliverables: 1
+approvals:
+  campaign_brief: false
+  blueprints: false
+  final_content: false
+verification:
+  unresolved: []

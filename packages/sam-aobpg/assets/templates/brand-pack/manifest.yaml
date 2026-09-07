@@ -1,0 +1,25 @@
+schema_version: "1.0"
+pack_type: "sam-brand-pack"
+brand:
+  id: "replace-with-brand-slug"
+  name: "Replace with brand name"
+  preferred_name: "Replace with preferred name"
+profile:
+  status: "needs-information"
+  last_updated: "2026-09-07"
+  language: "en"
+  market: ""
+files:
+  brand_profile: "brand-profile.yaml"
+  voice_guide: "voice-guide.md"
+  visual_guide: "visual-guide.md"
+  content_strategy: "content-strategy.md"
+  compliance: "compliance.md"
+channels: []
+offers: []
+assets: {}
+readiness:
+  level: "needs-information"
+  missing:
+    - "Complete guided or quick brand setup"
+user_confirmed: false

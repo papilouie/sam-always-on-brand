@@ -1,0 +1,38 @@
+schema_version: "1.0"
+offer_id: "weeknight-family-box"
+name: "Weeknight Family Box"
+type: "physical-product"
+description: "A weekday meal box containing roast chicken, two large sides, four rolls, and four cookies."
+audience_ids: ["busy-austin-parents", "local-families"]
+problems:
+  - "Time-consuming weekday dinner decisions"
+  - "Coordinating several individual orders"
+benefits:
+  confirmed:
+    - "Provides one meal option designed to serve four"
+    - "Simplifies ordering for a group"
+  requires_evidence:
+    - "Costs less than ordering the items separately"
+features:
+  - "Roast chicken"
+  - "Two large sides"
+  - "Four rolls"
+  - "Four cookies"
+proof: {}
+pricing:
+  status: "confirmed"
+  amount: 32
+  currency: "USD"
+availability:
+  status: "confirmed"
+  details: "Monday through Thursday"
+destination:
+  url: "https://sunnyspoon.example/familybox"
+claims:
+  approved:
+    - "Serves four"
+    - "Available Monday through Thursday"
+  prohibited:
+    - "Guaranteed to save money"
+    - "Everyone will love it"
+required_disclosures: []
